@@ -1,4 +1,5 @@
 module.exports = {
+  "extends": "eslint:recommended",
   "rules": {
     "array-bracket-spacing": [2, "never"],
     "block-spacing": [2, "always"],
