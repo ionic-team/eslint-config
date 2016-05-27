@@ -1,0 +1,21 @@
+{
+  "name": "eslint-config-ionic",
+  "version": "0.0.1",
+  "description": "Common eslint rules/preferences for Ionic.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/driftyco/eslint-config-ionic.git"
+  },
+  "keywords": [
+    "eslint",
+    "lint",
+    "ionic"
+  ],
+  "author": "Ionic",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/driftyco/eslint-config-ionic/issues"
+  },
+  "homepage": "https://github.com/driftyco/eslint-config-ionic#readme"
+}
