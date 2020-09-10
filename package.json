@@ -1,6 +1,6 @@
 {
   "name": "@ionic/eslint-config",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Common eslint rules/preferences for Ionic.",
   "main": "index.js",
   "repository": {
