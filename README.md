@@ -1,18 +1,20 @@
-# eslint-config-ionic
+# @ionic/eslint-config
 
-Common eslint rules/preferences for Ionic.
+Shared ESLint config used in Ionic and Capacitor projects.
 
 ## Usage
 
-Install:
+1. Remove existing `.eslintrc.*` file, if present.
+1. Install `eslint` and the config.
 
-```bash
-npm i eslint-config-ionic --save-dev
-```
+    ```
+    npm install -D eslint @ionic/eslint-config
+    ```
 
-Extend the rules from your eslint file:
-```json
-{
-  "extends": "ionic"
-}
-```
+1. Add the following to `package.json`:
+
+    ```
+    "eslintConfig": {
+      "extends": "@ionic"
+    }
+    ```
