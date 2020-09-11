@@ -15,6 +15,8 @@ Shared ESLint config used in Ionic and Capacitor projects.
 
     ```
     "eslintConfig": {
-      "extends": "@ionic"
+      "extends": "@ionic/eslint-config/recommended"
     }
     ```
+
+:memo: you can also use the base rule set: `@ionic/eslint-config`
