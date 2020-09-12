@@ -10,6 +10,10 @@ module.exports = {
     'prettier/@typescript-eslint',
   ],
   rules: {
+    // https://eslint.org/docs/rules/
+    'no-fallthrough': 'off', // https://github.com/ionic-team/eslint-config/issues/7
+
+    // https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin/docs/rules
     '@typescript-eslint/no-this-alias': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/explicit-module-boundary-types': ['warn', { 'allowArgumentsExplicitlyTypedAsAny': true }],
