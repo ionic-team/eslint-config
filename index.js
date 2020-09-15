@@ -12,6 +12,7 @@ module.exports = {
   rules: {
     // https://eslint.org/docs/rules/
     'no-fallthrough': 'off', // https://github.com/ionic-team/eslint-config/issues/7
+    'no-constant-condition': 'off',
 
     // https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin/docs/rules
     '@typescript-eslint/no-this-alias': 'off',
