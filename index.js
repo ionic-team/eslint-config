@@ -2,12 +2,13 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: [
     '@typescript-eslint',
+    'import'
   ],
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'prettier',
-    'prettier/@typescript-eslint',
+    'plugin:import/typescript',
   ],
   rules: {
     // https://eslint.org/docs/rules/
