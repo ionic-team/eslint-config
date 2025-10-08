@@ -6,22 +6,30 @@ This is meant to be used alongside Prettier (with [`@ionic/prettier-config`](htt
 
 ## Usage
 
-1. Remove existing `.eslintrc.*` file, if present.
-1. Install `eslint` and the config.
+1. Install `eslint` 9 and this config:
 
     ```
     npm install -D eslint @ionic/eslint-config
     ```
 
-1. Add the following to `package.json`:
+1. Create an `eslint.config.js` flat config file (remove any existing `.eslintrc.*` file):
 
-    ```
-    "eslintConfig": {
-      "extends": "@ionic/eslint-config/recommended"
-    }
+    ```js
+    // eslint.config.js
+    import ionicRecommended from '@ionic/eslint-config/recommended';
+
+    export default ionicRecommended;
     ```
 
-:memo: You can also use the base rule set: `@ionic/eslint-config`
+    :memo: Prefer the base rule set without the additional strict rules?
+
+    ```js
+    import ionicBase from '@ionic/eslint-config';
+
+    export default ionicBase;
+    ```
+
+    For CommonJS, use `require()` instead of `import`.
 
 ### With Prettier and `@ionic/prettier-config`
 
