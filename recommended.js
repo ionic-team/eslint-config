@@ -1,36 +1,38 @@
-module.exports = {
-  extends: [
-    './index',
-    'plugin:import/typescript',
-  ],
-  plugins: [
-    'import',
-  ],
-  rules: {
-    // ./index.js
-    '@typescript-eslint/explicit-module-boundary-types': [
-      'error',
-      { allowArgumentsExplicitlyTypedAsAny: true },
-    ],
-    // https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin/docs/rules
-    '@typescript-eslint/array-type': 'error',
-    '@typescript-eslint/consistent-type-assertions': 'error',
-    '@typescript-eslint/consistent-type-imports': 'error',
-    '@typescript-eslint/prefer-for-of': 'error',
-    '@typescript-eslint/prefer-optional-chain': 'error',
+const base = require('./index');
 
-    // https://github.com/benmosher/eslint-plugin-import
-    'import/first': 'error',
-    'import/order': [
-      'error',
-      {
-        'alphabetize': { order: 'asc', caseInsensitive: false },
-        'groups': [['builtin', 'external'], 'parent', ['sibling', 'index']],
-        'newlines-between': 'always',
-      },
-    ],
-    'import/newline-after-import': 'error',
-    'import/no-duplicates': 'error',
-    'import/no-mutable-exports': 'error',
+// Keep in sync with index.js.
+const TS_FILES = ['**/*.ts', '**/*.tsx', '**/*.mts', '**/*.cts'];
+
+module.exports = [
+  ...base,
+  {
+    files: TS_FILES,
+    rules: {
+      // ./index.js
+      '@typescript-eslint/explicit-module-boundary-types': [
+        'error',
+        { allowArgumentsExplicitlyTypedAsAny: true },
+      ],
+      // https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin/docs/rules
+      '@typescript-eslint/array-type': 'error',
+      '@typescript-eslint/consistent-type-assertions': 'error',
+      '@typescript-eslint/consistent-type-imports': 'error',
+      '@typescript-eslint/prefer-for-of': 'error',
+      // prefer-optional-chain was here under v5; as of v8 it needs type information. See README.
+
+      // https://github.com/un-ts/eslint-plugin-import-x
+      'import-x/first': 'error',
+      'import-x/order': [
+        'error',
+        {
+          'alphabetize': { order: 'asc', caseInsensitive: false },
+          'groups': [['builtin', 'external'], 'parent', ['sibling', 'index']],
+          'newlines-between': 'always',
+        },
+      ],
+      'import-x/newline-after-import': 'error',
+      'import-x/no-duplicates': 'error',
+      'import-x/no-mutable-exports': 'error',
+    },
   },
-};
+];
