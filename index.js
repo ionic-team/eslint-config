@@ -3,15 +3,14 @@ const ts = require('@typescript-eslint/eslint-plugin');
 const prettier = require('eslint-config-prettier/flat');
 const importX = require('eslint-plugin-import-x');
 
-// Keep in sync with recommended.js. Flat config ignores `--ext` and lints .js by default,
-// so scoping to TypeScript (matching 0.x's `eslint --ext ts` usage) happens here.
+// Flat config ignores `--ext`, so the TypeScript scoping happens here. Keep in sync with recommended.js.
 const TS_FILES = ['**/*.ts', '**/*.tsx', '**/*.mts', '**/*.cts'];
 
 module.exports = [
   js.configs.recommended,
   ...ts.configs['flat/recommended'],
-  // Wired by hand: import-x's own TypeScript preset requires eslint-import-resolver-typescript,
-  // which drags in the unmaintained eslint-plugin-import and caps ESLint at v9.
+  // import-x's own TypeScript preset needs a resolver package whose peers cap ESLint at v9,
+  // so use the resolver import-x bundles instead.
   { plugins: { 'import-x': importX }, settings: { 'import-x/resolver-next': [importX.createNodeResolver()] } },
   prettier,
   {

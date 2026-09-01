@@ -15,7 +15,7 @@ This is meant to be used alongside Prettier (with [`@ionic/prettier-config`](htt
     npm install -D eslint @ionic/eslint-config
     ```
 
-1. Create an `eslint.config.cjs` in your project root:
+2. Create an `eslint.config.cjs` in your project root:
 
     ```js
     const ionic = require('@ionic/eslint-config/recommended');
@@ -30,14 +30,13 @@ This is meant to be used alongside Prettier (with [`@ionic/prettier-config`](htt
 
 :memo: You can also use the base rule set: `@ionic/eslint-config`
 
-Both rule sets apply only to TypeScript files (`.ts`, `.tsx`, `.mts`, `.cts`), matching the
-`eslint --ext ts` usage 0.x was paired with. To lint JavaScript too, add your own config block.
+Both rule sets apply only to TypeScript files (`.ts`, `.tsx`, `.mts`, `.cts`). To lint
+JavaScript too, add your own config block.
 
 ### With Prettier and `@ionic/prettier-config`
 
 1. Set up Prettier and [`@ionic/prettier-config`](https://github.com/ionic-team/prettier-config/).
-1. This config already includes `eslint-config-prettier`, so formatting rules that would
-   fight Prettier are turned off. Run Prettier as its own step, with ESLint first:
+2. When using with Prettier and `@ionic/prettier-config`, ESLint should run first. Set up your scripts in `package.json` like this:
 
     ```json
       "scripts": {
@@ -55,19 +54,17 @@ Both rule sets apply only to TypeScript files (`.ts`, `.tsx`, `.mts`, `.cts`), m
 
 ## Migrating from 0.x
 
-1. Delete the `eslintConfig` block from `package.json` (or any `.eslintrc` file). ESLint 10
-   removed that format entirely.
-1. Add an `eslint.config.cjs` as shown above.
-1. Move `.eslintignore` entries into `ignores`, then delete the file. ESLint no longer reads it.
-1. Drop `--ext ts` from lint scripts. Flat config ignores the flag; the config scopes itself.
+1. Delete the `eslintConfig` block from `package.json` (or any `.eslintrc` file).
+2. Add an `eslint.config.cjs` as shown above.
+3. Move `.eslintignore` entries into `ignores`, then delete the file.
+4. Drop `--ext ts` from lint scripts; flat config ignores the flag.
 
-Most new reports come from the `@typescript-eslint` v5 → v8 upgrade:
+New reports to expect:
 
 - `no-unused-vars` now flags unused `catch (e)` bindings. Use `catch {}` instead.
 - `no-var-requires` was renamed to `no-require-imports`. Update any disable comments.
-- `import/*` rules are now `import-x/*` ([`eslint-plugin-import-x`](https://github.com/un-ts/eslint-plugin-import-x)
-  replaces the unmaintained `eslint-plugin-import`). Update any disable comments.
-- `prefer-optional-chain` is no longer in `recommended`: it now requires
+- `import/*` rules are now [`import-x/*`](https://github.com/un-ts/eslint-plugin-import-x). Update any disable comments.
+- `prefer-optional-chain` is no longer in `recommended`; it now requires
   [typed linting](https://typescript-eslint.io/getting-started/typed-linting/). Re-enable it
   in your own config if you use typed linting.
 
@@ -79,7 +76,7 @@ Most new reports come from the `@typescript-eslint` v5 → v8 upgrade:
     npm install -D husky
     ```
 
-1. Add the following to `package.json`:
+2. Add the following to `package.json`:
 
     ```
       "husky": {
