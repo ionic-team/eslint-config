@@ -14,7 +14,6 @@ const overrides = {
     '@typescript-eslint/consistent-type-assertions': 'error',
     '@typescript-eslint/consistent-type-imports': 'error',
     '@typescript-eslint/prefer-for-of': 'error',
-    // prefer-optional-chain was here under v5; as of v8 it needs type information. See README.
 
     // https://github.com/un-ts/eslint-plugin-import-x
     'import-x/first': 'error',
