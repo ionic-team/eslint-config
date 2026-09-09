@@ -4,7 +4,7 @@ Shared ESLint config used in Ionic and Capacitor projects.
 
 This is meant to be used alongside Prettier (with [`@ionic/prettier-config`](https://github.com/ionic-team/prettier-config/)).
 
-> **v1.0.0 requires ESLint 9 or 10** and a flat config file. Staying on ESLint 8? Keep using
+> **v1.0.0 requires ESLint 10** and a flat config file. Staying on ESLint 8 or 9? Keep using
 > `@ionic/eslint-config@0.4.0`.
 
 ## Usage
