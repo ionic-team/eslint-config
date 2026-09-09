@@ -4,7 +4,7 @@ Shared ESLint config used in Ionic and Capacitor projects.
 
 This is meant to be used alongside Prettier (with [`@ionic/prettier-config`](https://github.com/ionic-team/prettier-config/)).
 
-> **v1.0.0 requires ESLint 10** and a flat config file. Staying on ESLint 8 or 9? Keep using
+> **v0.5.0 requires ESLint 10** and a flat config file. Staying on ESLint 8 or 9? Keep using
 > `@ionic/eslint-config@0.4.0`.
 
 ## Usage
@@ -52,7 +52,7 @@ JavaScript too, add your own config block.
 
     :memo: Not every rule in this configuration is autofixable, so `npm run fmt` may continue failing until lint issues are addressed manually.
 
-## Migrating from 0.x
+## Migrating from 0.4 or earlier
 
 1. Delete the `eslintConfig` block from `package.json` (or any `.eslintrc` file).
 2. Add an `eslint.config.cjs` as shown above.
