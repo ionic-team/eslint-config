@@ -1,6 +1,7 @@
 const base = require('./index');
 
 const overrides = {
+  name: '@ionic/eslint-config/recommended',
   // Keep in sync with index.js.
   files: ['**/*.ts', '**/*.tsx', '**/*.mts', '**/*.cts'],
   rules: {

@@ -4,6 +4,7 @@ const prettier = require('eslint-config-prettier/flat');
 const importX = require('eslint-plugin-import-x');
 
 const overrides = {
+  name: '@ionic/eslint-config/overrides',
   rules: {
     // https://eslint.org/docs/rules/
     'no-fallthrough': 'off', // https://github.com/ionic-team/eslint-config/issues/7
@@ -26,7 +27,7 @@ module.exports = [
   ...ts.configs['flat/recommended'],
   // import-x's TypeScript preset needs a resolver package whose peers cap ESLint at v9,
   // so use the resolver import-x bundles instead.
-  { plugins: { 'import-x': importX }, settings: { 'import-x/resolver-next': [importX.createNodeResolver()] } },
+  { name: '@ionic/eslint-config/import-x', plugins: { 'import-x': importX }, settings: { 'import-x/resolver-next': [importX.createNodeResolver()] } },
   prettier,
   overrides,
 ].map((config) => (config.files ? config : { ...config, files: TS_FILES }));
