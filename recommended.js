@@ -1,11 +1,9 @@
-module.exports = {
-  extends: [
-    './index',
-    'plugin:import/typescript',
-  ],
-  plugins: [
-    'import',
-  ],
+const base = require('./index');
+
+const overrides = {
+  name: '@ionic/eslint-config/recommended',
+  // Keep in sync with index.js.
+  files: ['**/*.ts', '**/*.tsx', '**/*.mts', '**/*.cts'],
   rules: {
     // ./index.js
     '@typescript-eslint/explicit-module-boundary-types': [
@@ -17,11 +15,10 @@ module.exports = {
     '@typescript-eslint/consistent-type-assertions': 'error',
     '@typescript-eslint/consistent-type-imports': 'error',
     '@typescript-eslint/prefer-for-of': 'error',
-    '@typescript-eslint/prefer-optional-chain': 'error',
 
-    // https://github.com/benmosher/eslint-plugin-import
-    'import/first': 'error',
-    'import/order': [
+    // https://github.com/un-ts/eslint-plugin-import-x
+    'import-x/first': 'error',
+    'import-x/order': [
       'error',
       {
         'alphabetize': { order: 'asc', caseInsensitive: false },
@@ -29,8 +26,10 @@ module.exports = {
         'newlines-between': 'always',
       },
     ],
-    'import/newline-after-import': 'error',
-    'import/no-duplicates': 'error',
-    'import/no-mutable-exports': 'error',
+    'import-x/newline-after-import': 'error',
+    'import-x/no-duplicates': 'error',
+    'import-x/no-mutable-exports': 'error',
   },
 };
+
+module.exports = [...base, overrides];
